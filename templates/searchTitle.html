@@ -1,0 +1,9 @@
+{% extends "base2.html" %}
+{% block title %} Add Title - {{session["user"]["key"]}} {% endblock %}
+{% block content %} 
+<form action = "#" method="post">
+    <p>Name of the Title:</p>
+	<p><input type="text" name="nm" /></p>
+	<p><input type="submit" value="submit"/></p>
+</form>
+{% endblock %}

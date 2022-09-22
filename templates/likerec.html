@@ -1,0 +1,15 @@
+{% extends "base2.html" %}
+{% block title %} Reccomender - {{session["user"]["username"]}} {% endblock %}
+{% block header %}<h1>Titles we Reccomended</h1>{% endblock %}
+{% block content %} 
+<form action = "#" method="post">
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+
+    <p>tconst of the title you like: </p>
+	<p><input type="text" name="tconst" /></p>
+	<p><input type="submit" value="submit"/></p>
+</form>
+{% endblock %}

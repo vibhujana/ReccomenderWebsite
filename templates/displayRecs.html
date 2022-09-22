@@ -1,0 +1,14 @@
+{% extends "base2.html" %}
+{% block title %} View Liked Titles {% endblock %}
+{% block content %} 
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+<form action = "likeRec",method="post">
+    <p><input type = "submit" value = "Like a Reccomended Title"/> </p>
+</form>
+<form action = "clearRec",method="post">
+    <p><input type = "submit" value = "Clear Reccomended"/> </p>
+</form>
+{% endblock %}

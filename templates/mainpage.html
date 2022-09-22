@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% block title %} Reccomender - {{session["user"]["username"]}} {% endblock %}
+{% block header %}<h1> Welcome {{session["user"]["username"]}}!</h1>{% endblock %}
+{% block content %} 
+<form action = "searchTitle",method="post">
+    <p><input type = "submit" value = "add a title i like"/> </p>
+</form>
+<form action = "recTitle",method="post">
+    <p><input type = "submit" value = "reccomeded me a title"/> </p>
+</form>
+<form action = "displayLikes",method="post">
+    <p><input type = "submit" value = "display movies I like"/> </p>
+</form>
+<form action = "displayRecs",method="post">
+    <p><input type = "submit" value = "display movies I got reccomended"/> </p>
+</form>
+<form action = "likeRec",method="post">
+    <p><input type = "submit" value = "like a Reccomended movie"/> </p>
+</form>
+<form action = "deleteTitle",method="post">
+    <p><input type = "submit" value = "delete a title i like"/> </p>
+</form>
+{% endblock %}

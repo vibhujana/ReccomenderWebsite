@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% block title %} Reccomender - {{session["user"]["username"]}} {% endblock %}
+{% block header %}<h1>Here are titles I think you will like</h1>{% endblock %}
+{% block content %} 
+{% if tables is defined %}
+    {% for table in tables %}
+        {{titles[loop.index]}}
+        {{ table|safe }}
+    {% endfor %}
+    <form action = "likeRec",method="post">
+        <p><input type = "submit" value = "Like a Reccomended Title"/> </p>
+    </form>
+    <form action = "displayRecs",method="post">
+        <p><input type = "submit" value = "display movies I got reccomended"/> </p>
+    </form>
+{% else %}
+    <form action="#" method="post">
+	    <p>How many:</p>
+	    <p><input type="number" name="count" /></p>
+	    <p><input type="submit" value="submit"/></p>
+    </form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <body>
+            <h1>{% block header %} {% endblock %}</h1>
+            <div class="topnav">
+                <a href="{{url_for('mainpage')}}">Home</a>
+                <a href="{{url_for('logout')}}">logout</a>
+            </div> 
+            {% block content %} {% endblock %}
+        </body> 
+    </head>
+
+</html>

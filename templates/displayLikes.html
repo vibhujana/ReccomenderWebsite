@@ -1,0 +1,14 @@
+{% extends "base2.html" %}
+{% block title %} View Liked Titles {% endblock %}
+{% block content %} 
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+<form action = "searchTitle",method="post">
+    <p><input type = "submit" value = "Add a Title"/> </p>
+</form>
+<form action = "deleteTitle",method="post">
+    <p><input type = "submit" value = "Delete a Title"/> </p>
+</form>
+{% endblock %}
